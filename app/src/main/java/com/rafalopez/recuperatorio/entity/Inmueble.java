@@ -10,6 +10,7 @@ public class Inmueble {
     private double precio;
 
 
+    public Inmueble(){}
     public Inmueble(String codigo, String descripcion, int cantidadAmbientes, String direccion, double precio) {
         this.codigo = codigo;
         this.descripcion = descripcion;
@@ -43,5 +44,13 @@ public class Inmueble {
     public boolean equals(@Nullable Object obj  ) {
         Inmueble inmueble = (Inmueble) obj;
         return codigo.equalsIgnoreCase(inmueble.codigo);
+    }
+    public int isValid(){
+        if(this.codigo == null) return 1;
+        if(this.descripcion == null) return 2;
+        if(this.cantidadAmbientes == 0) return 3;
+        if(this.direccion == null) return 4;
+        if(this.precio==0) return 5;
+        return 0;
     }
 }

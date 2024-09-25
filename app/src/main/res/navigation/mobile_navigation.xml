@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/nav_home">
+    app:startDestination="@id/nav_cargar">
 
     <fragment
         android:id="@+id/nav_home"
@@ -13,13 +13,13 @@
 
     <fragment
         android:id="@+id/nav_cargar"
-        android:name="com.rafalopez.recuperatorio.ui."
+        android:name="com.rafalopez.recuperatorio.ui.cargar.CargarFragment"
         android:label="@string/menu_cargar"
-        tools:layout="@layout/fragment_gallery" />
+        tools:layout="@layout/fragment_cargar" />
 
     <fragment
         android:id="@+id/nav_borrar"
-        android:name="com.rafalopez.recuperatorio.ui.slideshow.SlideshowFragment"
+        android:name="com.rafalopez.recuperatorio.ui.borrar.BorrarFragment"
         android:label="@string/menu_borrar"
-        tools:layout="@layout/fragment_slideshow" />
+        tools:layout="@layout/fragment_borrar" />
 </navigation>

@@ -2,12 +2,25 @@
     <string name="app_name">Recuperatorio</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_title">Inmobiliaria Recuperada</string>
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
-    <string name="action_settings">Settings</string>
 
     <string name="menu_home">Home</string>
-    <string name="menu_cargar">Caragar</string>
-    <string name="menu_borrar">Borrar</string>
+    <string name="menu_cargar">Cargar Inmueble</string>
+    <string name="menu_borrar">Borrar Inmueble</string>
+<!--    Form Cargar Inmueble-->
+    <string name="cargar_titulo">Cargar Inmobiliaria</string>
+    <string name="cargar_codigo">Codigo</string>
+    <string name="cargar_descripcion">Descripcion</string>
+    <string name="cargar_cantidad">Cantidad Ambientes</string>
+    <string name="cargar_direccion">Direccion</string>
+    <string name="cargar_precio">Precio</string>
+    <string name="input_codigo">Ingrese Codigo</string>
+    <string name="input_descripcion">Ingrese Descripcion</string>
+    <string name="input_cantidad">Ingrese Nº Ambientes</string>
+    <string name="input_direccion">Ingrese Direccion</string>
+    <string name="input_precio">Ingrese Precio</string>
+    <string name="btn_guardar">Guardar</string>
+
 </resources>

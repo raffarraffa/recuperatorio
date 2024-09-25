@@ -15,12 +15,13 @@ import android.view.ViewGroup;
 import com.rafalopez.recuperatorio.R;
 import com.rafalopez.recuperatorio.databinding.FragmentCargarBinding;
 import com.rafalopez.recuperatorio.databinding.FragmentGalleryBinding;
+import com.rafalopez.recuperatorio.entity.Inmueble;
 
 public class CargarFragment extends Fragment {
 
     private CargarViewModel mViewModel;
     private FragmentCargarBinding binding;
-
+    Inmueble inmueble = new Inmueble();
     @Override
     public View onCreateView(
             @NonNull LayoutInflater inflater,
@@ -31,6 +32,18 @@ public class CargarFragment extends Fragment {
                                            .get(CargarViewModel.class);
                            binding = FragmentCargarBinding.inflate(inflater, container,false);
                            View root = binding.getRoot();
+            binding.btnCargar.setOnClickListener(new View.OnClickListener(){
+
+                @Override
+                public void onClick(View v) {
+                    inmueble.setCodigo(binding.inputCodigo.getText().toString());
+                    inmueble.setDescripcion(binding.inputDescripcion.getText().toString());
+                    inmueble.setCantidadAmbientes(Integer.parseInt(binding.inputCantidad.getText().toString()));
+                    inmueble.setDireccion(binding.direccion.getText().toString());
+                    inmueble.setPrecio(Double.parseDouble(binding.inputPrecio.getText().toString()));
+                    mViewModel.cargarInmueble(inmueble);
+                }
+            });
 
 
 
