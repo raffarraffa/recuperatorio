@@ -19,7 +19,7 @@ import com.rafalopez.recuperatorio.entity.Inmueble;
 
 public class CargarFragment extends Fragment {
 
-    private CargarViewModel mViewModel;
+    private CargarViewModel cargarViewModel;
     private FragmentCargarBinding binding;
     Inmueble inmueble = new Inmueble();
     @Override
@@ -27,9 +27,7 @@ public class CargarFragment extends Fragment {
             @NonNull LayoutInflater inflater,
             @Nullable ViewGroup container,
             @Nullable Bundle savedInstanceState) {
-                           CargarViewModel cargarViewModel=
-                                   new ViewModelProvider(this)
-                                           .get(CargarViewModel.class);
+                           cargarViewModel= new ViewModelProvider(this).get(CargarViewModel.class);
                            binding = FragmentCargarBinding.inflate(inflater, container,false);
                            View root = binding.getRoot();
             binding.btnCargar.setOnClickListener(new View.OnClickListener(){
@@ -41,7 +39,7 @@ public class CargarFragment extends Fragment {
                     inmueble.setCantidadAmbientes(Integer.parseInt(binding.inputCantidad.getText().toString()));
                     inmueble.setDireccion(binding.direccion.getText().toString());
                     inmueble.setPrecio(Double.parseDouble(binding.inputPrecio.getText().toString()));
-                    mViewModel.cargarInmueble(inmueble);
+                  //  cargarViewModel.cargarInmueble(inmueble);
                 }
             });
 
