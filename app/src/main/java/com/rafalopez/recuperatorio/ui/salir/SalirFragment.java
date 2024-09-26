@@ -10,15 +10,15 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
-import com.rafalopez.recuperatorio.databinding.FragmentHomeBinding;
+import com.rafalopez.recuperatorio.databinding.FragmentSalirBinding;
 
 public class SalirFragment extends Fragment {
 
-    private FragmentHomeBinding binding;
+    private FragmentSalirBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        binding = FragmentHomeBinding.inflate(inflater, container, false);
+        binding = FragmentSalirBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
         new AlertDialog.Builder(getContext())
