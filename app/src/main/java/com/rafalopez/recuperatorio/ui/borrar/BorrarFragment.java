@@ -20,7 +20,6 @@ import android.widget.Toast;
 
 import com.rafalopez.recuperatorio.R;
 import com.rafalopez.recuperatorio.databinding.FragmentBorrarBinding;
-import com.rafalopez.recuperatorio.databinding.FragmentGalleryBinding;
 import com.rafalopez.recuperatorio.entity.Inmueble;
 
 public class BorrarFragment extends Fragment {

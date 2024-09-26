@@ -37,13 +37,12 @@ public class Inmueble {
 
     @Override
     public String toString() {
-        return "Inmueble{" +
+        return "Inmueble\n" +
                 "codigo='" + codigo + '\'' +
-                ", descripcion='" + descripcion + '\'' +
-                ", cantidadAmbientes=" + cantidadAmbientes +
-                ", direccion='" + direccion + '\'' +
-                ", precio=" + precio +
-                '}';
+                "\n descripcion='" + descripcion + '\'' +
+                "\n cantidadAmbientes=" + cantidadAmbientes +
+                "\n direccion='" + direccion + '\'' +
+                "\n precio=" + precio ;
     }
 
     /**
