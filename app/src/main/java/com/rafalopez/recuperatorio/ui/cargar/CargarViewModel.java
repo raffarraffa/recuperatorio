@@ -2,6 +2,8 @@ package com.rafalopez.recuperatorio.ui.cargar;
 
 import android.app.Application;
 import android.content.Context;
+import android.util.Log;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
@@ -14,53 +16,53 @@ import com.rafalopez.recuperatorio.service.AlertMsg;
 
 public class CargarViewModel extends AndroidViewModel {
     private  Inmueble inmueble;
-    private  MutableLiveData<String> mText;
-    private Context contexto;
+    private  MutableLiveData<String> mToastText;
+  //  private Context contexto;
 
-    public CargarViewModel(@NonNull Application application, Context contexto) {
+
+    public CargarViewModel(@NonNull Application application) {
         super(application);
-        this.contexto = contexto.getApplicationContext();
+//        this.contexto = getApplication().getApplicationContext();
+
     }
+    public MutableLiveData<String> getToastMessage() {
 
-    public MutableLiveData<String> getmText() {
-        return mText;
-    }
-
-    public void cargarInmueble(Inmueble inmueble){
-        switch (inmueble.isValid()){
-            case 0:
-                addInmueble(inmueble);
-            break;
-            case 1:
-                AlertMsg.mostrar(contexto,"El inmueble no tiene codigo");
-            break;
-            case 2:
-                AlertMsg.mostrar(contexto,"El inmueble no tiene descripcion");
-            break;
-            case 3:
-                AlertMsg.mostrar(contexto,"El inmueble no tiene cant. ambientes");
-            break;
-            case 4:
-                AlertMsg.mostrar(contexto,"El inmueble no tiene direccion");
-            break;
-            case 5:
-                AlertMsg.mostrar(contexto,"El inmueble no tiene precio");
-            break;
-            default:
-                AlertMsg.mostrar(contexto,"El inmueble no tiene codigo");
-
+        if(mToastText==null){
+            mToastText=new MutableLiveData<>();
         }
+        return mToastText;
     }
+    public void cargarInmueble(String codigo,String descripcion,String ambiente, String direccion, String precio){
+        if(codigo.isEmpty() || descripcion.isEmpty() || ambiente.isEmpty()|| direccion.isEmpty() || precio.isEmpty() ) {
+            Log.d("salida", "cargarInmueble: SADFF" );
+
+            mToastText.setValue("Tiene campo incompletos");
+            return;
+        }
+        inmueble =new Inmueble(codigo,descripcion,Integer.parseInt(ambiente),direccion,
+                Double.parseDouble(precio));
+       for(Inmueble in : MainActivity.inmuebles) {
+           Log.d("salida", "cargarInmueble: " + in.toString());
+           if (in.equals(inmueble)) {
+               mToastText.setValue("El codigo ya existe");
+               return;
+           }
+       }
+         MainActivity.inmuebles.add(inmueble);
+        mToastText.setValue("Inmueble coigo " + inmueble.getCodigo() +  " Fue crado con exito  " );
+       return;
+   }
 
 
     private  void addInmueble(Inmueble inmueble) {
         for(Inmueble in :MainActivity.inmuebles) {
             if (inmueble.equals(in)) {
-                AlertMsg.mostrar(contexto, "El inmueble ya existe ");
+              //  AlertMsg.mostrar(contexto, "El inmueble ya existe ");
                 return;
             }
         }
         MainActivity.inmuebles.add(inmueble);
-        AlertMsg.mostrar(contexto, "El inmueble agregado con exito ");
+//        AlertMsg.mostrar(contexto, "El inmueble agregado con exito ");
         }
+
 }
