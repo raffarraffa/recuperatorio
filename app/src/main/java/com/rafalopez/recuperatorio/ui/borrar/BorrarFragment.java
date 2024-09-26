@@ -13,19 +13,33 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.rafalopez.recuperatorio.R;
+import com.rafalopez.recuperatorio.databinding.FragmentBorrarBinding;
+import com.rafalopez.recuperatorio.databinding.FragmentGalleryBinding;
 
 public class BorrarFragment extends Fragment {
 
     private BorrarViewModel mViewModel;
+    private FragmentBorrarBinding binding;
+    //private String codigo, descripcion,ambientes,direccion,precio;
+    private String codigo, descripcion,ambientes,direccion,precio;
+
 
     public static BorrarFragment newInstance() {
         return new BorrarFragment();
     }
 
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
-                             @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_borrar, container, false);
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        mViewModel = new ViewModelProvider(this).get(BorrarViewModel.class);
+        View root = binding.getRoot();
+        binding.button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mViewModel.
+            }
+        });
+
+        return root;
     }
 
     @Override
