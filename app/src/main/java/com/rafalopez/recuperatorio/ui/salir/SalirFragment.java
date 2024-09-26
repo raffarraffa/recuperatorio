@@ -1,4 +1,4 @@
-package com.rafalopez.recuperatorio.ui.home;
+package com.rafalopez.recuperatorio.ui.salir;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -6,19 +6,13 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.ViewModelProvider;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
 
-import com.rafalopez.recuperatorio.MainActivity;
-import com.rafalopez.recuperatorio.R;
 import com.rafalopez.recuperatorio.databinding.FragmentHomeBinding;
 
-public class HomeFragment extends Fragment {
+public class SalirFragment extends Fragment {
 
     private FragmentHomeBinding binding;
 
@@ -40,7 +34,6 @@ public class HomeFragment extends Fragment {
                 .setNegativeButton("No", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        
                     }
                 })
                 .show();

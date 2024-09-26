@@ -6,7 +6,7 @@
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
 
-    <string name="menu_home">Home</string>
+    <string name="menu_salir">Salir</string>
     <string name="menu_cargar">Cargar Inmueble</string>
     <string name="menu_borrar">Borrar Inmueble</string>
 <!--    Form Cargar Inmueble-->
