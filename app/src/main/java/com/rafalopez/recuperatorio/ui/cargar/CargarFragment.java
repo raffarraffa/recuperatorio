@@ -42,7 +42,7 @@ public class CargarFragment extends Fragment {
                                 binding.inputCodigo.setText("");
                                 binding.inputDescripcion.setText("");
                                 binding.inputCantidad.setText("");
-                                binding.direccion.setText("");
+                                binding.inputDireccion.setText("");
                                 binding.inputPrecio.setText("");
                             }
                         });
